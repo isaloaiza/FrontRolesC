@@ -4,8 +4,8 @@ import { API_URL } from "../Autenticacion/constanst";
 import { useAuth } from '../Autenticacion/AutProvider';
 
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
-  const auth = useAuth();
-  const { getRol, getAccessToken, getRefreshToken, signOut } = useAuth();
+  
+  const { getRol, getAccessToken,  signOut } = useAuth();
   const [role, setRole] = useState<string | null>(null); // Estado para almacenar el rol
   const [error, setError] = useState<string | null>(null);
 
