@@ -12,7 +12,7 @@ import { FaFilePdf } from "react-icons/fa";
 import { useAuth } from '../Autenticacion/AutProvider';
 import '../pages/DatosFrom/info.css';
 
-const ReservasUser = () => {
+const UserReseve = () => {
   const navigate = useNavigate();
   const [reservas, setReservas] = useState([]);
   const auth = useAuth();
@@ -157,4 +157,4 @@ const ReservasUser = () => {
   );
 };
 
-export default ReservasUser;
+export default UserReseve;

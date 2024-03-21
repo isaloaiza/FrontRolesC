@@ -16,7 +16,8 @@ import Posts from '../src/pages/DatosFrom/DatosForm';
 import PostInfo from '../src/pages/DatosFrom/PostsInfo';
 import Explicacion from '../src/routes/Explicacion';
 import Reservas from '../src/routes/Reservas';
-import ReservasUser from '../src/routes/reservaUser.JSX';
+import UserReseve from './routes/UserReserve';
+
 import ExplicacionUser from '../src/routes/ExplicacionUser';
 
 const router = createBrowserRouter([
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/reservasUser",
-    element: <ReservasUser />
+    element: <UserReseve />
   },
   {
     path: "/perfil",
