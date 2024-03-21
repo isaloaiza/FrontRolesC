@@ -34,9 +34,17 @@ export default function Login() {
         const json = (await response.json()) as AuthResponse;
 
         if (json.body.accessToken && json.body.refreshToken) {
-         auth.saveUser(json);
-         
-          goto("/dashboard");
+          auth.saveUser(json);
+
+          // Obtener el rol del usuario
+          const role = json.body.user.role;
+
+          // Redirigir según el rol del usuario
+          if (role === "cliente") {
+            goto("/posts");
+          } else if (role === "usuario") {
+            goto("/dashboard");
+          }
         }
       } else {
         const json = (await response.json()) as AuthResponseError;
@@ -48,8 +56,6 @@ export default function Login() {
     }
   }
 
-  console.log(auth.esAutentico);
-  
   if (auth.esAutentico) {
     return <Navigate to="/dashboard" />;
   }
