@@ -62,7 +62,7 @@ const Posts = () => {
   //             <th>Descripción</th>
   //             <th>Latitud</th>
   //             <th>Longitud</th>
-  //             <th>ID Usuario</th> 
+  //    
   //             <th>Actualización</th>
   //             <th>Eliminación</th>
   //             <th>Reserva</th>
@@ -75,7 +75,7 @@ const Posts = () => {
   //               <td>{post.content}</td>
   //               <td>{post.latitud}</td>
   //               <td>{post.longitud}</td>
-  //               <td> {post.userId} </td> 
+  //     
   //               <td>
   //                 <button onClick={() => navigate(`/post/${post._id}`)} className="btn btn-primary">
   //                   Actualizar
