@@ -17,6 +17,7 @@ export default function ExplicacionUser() {
       <div className="explicacion-container">
         <div className="steps-container">
           <h1>Pasos para crear su reserva en ParkingLocation</h1>
+          <h1>Pasos para crear su reserva en ParkingLocation</h1>
           <ol>
             <li>Ingresar al sistema de ParkingLocation.</li>
             <li>Ir al apartado de Mapa de navegación.</li>
