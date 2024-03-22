@@ -17,7 +17,6 @@ export default function ExplicacionUser() {
       <div className="explicacion-container">
         <div className="steps-container">
           <h1>Pasos para crear su reserva en ParkingLocation</h1>
-          <h1>Pasos para crear su reserva en ParkingLocation</h1>
           <ol>
             <li>Ingresar al sistema de ParkingLocation.</li>
             <li>Ir al apartado de Mapa de navegación.</li>
@@ -25,7 +24,7 @@ export default function ExplicacionUser() {
             <li>Llenar los datos del formulario.</li>
             <p>
               Si aun hay puestos disponibles puedes hacer tu reserva:
-              <a href="https://coordinates-gps.gosur.com/es/" target="_blank" rel="noopener noreferrer">click aquí</a>.
+              <a href="/dashboard" target="_blank" rel="noopener noreferrer">click aquí</a>.
             </p>
             <li>La reserrva será validada y finalmente creada.</li>
             <div>
