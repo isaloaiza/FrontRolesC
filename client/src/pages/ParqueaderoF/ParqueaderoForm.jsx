@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2'
 import { useParams, useNavigate } from 'react-router-dom';
-import './Post.css';
+// import './Post.css';
+import './formulario.css';
 import config from '../../config.json';
 import PortalLayout from '../../layout/PortalLayout';
 import { useAuth } from '../../Autenticacion/AutProvider';
@@ -125,140 +126,84 @@ const Post = () => {
 
   return (
     <PortalLayout>
-      <div class="DatosParqueadero">
-        <div class="form1">
-          <form action="#">
-            <div class="form-header1">
-              <div class="title">
-                <h2>{id === 'new' ? 'Nuevo Parqueadero' : 'Actualizar Parqueadero'}</h2>
-              </div>
-              <div class="login-button">
-                <button><a href="#">Bienvenido</a></button>
-              </div>
+    <div class="DatosParqueadero">
+      <div class="form1">
+        <form action="#">
+          <div class="form-header1">
+            <div class="title">
+              <h2>{id === 'new' ? 'Nuevo Parqueadero' : 'Actualizar Parqueadero'}</h2>
             </div>
-            
-            <div class="input-group">
+            <div class="login-button">
+              <button><a href="#">Bienvenido</a></button>
+            </div>
+          </div>
+  
+          <div class="input-group">
+            <div class="column">
               <div class="input-box">
                 <label for="firstname">Nombre parqueadero</label>
-                <input type="text" id="title" placeholder="Ej: parquedero nuevaVista..." name="title"
-                  value={post.title} onChange={handleChange} className="form-control2" />
+                <input type="text" id="title" placeholder="Ej: parquedero nuevaVista..." name="title" value={post.title} onChange={handleChange} className="form-control2" style={{color: "black"}}/>
               </div>
-
+  
               <div class="input-box">
                 <label for="lastname">Direccion</label>
-                <input
-                  type="text"
-                  id="content"
-                  placeholder="Ej: calle 4 ta #23 - 45"
-                  name="content"
-                  value={post.content}
-                  onChange={handleChange}
-                  className="form-control"
-                />
+                <input type="text" id="content" placeholder="Ej: calle 4 ta #23 - 45" name="content" value={post.content} onChange={handleChange} className="form-control" style={{color: "black"}}/>
               </div>
-
+  
               <div class="input-box">
                 <label for="lastname">Horarios</label>
-                <input
-                  type="text"
-                  placeholder="Ej: 3h, 24h, 2h"
-                  name="horarios"
-                  value={post.horarios}
-                  onChange={handleChange}
-                />
+                <input type="text" placeholder="Ej: 3h, 24h, 2h" name="horarios" value={post.horarios} onChange={handleChange} style={{color: "black"}}/>
               </div>
-
+            </div>
+  
+            <div class="column">
               <div class="input-box">
                 <label for="lastname">Tarifa Moto</label>
-                <input
-                  type="text"
-                  placeholder="Ej: 1000, 3000, 5000"
-                  name="tarifaMoto"
-                  value={post.tarifaMoto}
-                  onChange={handleChange}
-                />
+                <input type="text" placeholder="Ej: 1000, 3000, 5000" name="tarifaMoto" value={post.tarifaMoto} onChange={handleChange} style={{color: "black"}}/>
               </div>
-
+  
               <div class="input-box">
                 <label for="lastname">Tarifa Carro</label>
-                <input
-                  type="text"
-                  placeholder="Ej: 10.000, 6.000, 3.000"
-                  name="tarifaCarro"
-                  value={post.tarifaCarro}
-                  onChange={handleChange}
-                />
+                <input type="text" placeholder="Ej: 10.000, 6.000, 3.000" name="tarifaCarro" value={post.tarifaCarro} onChange={handleChange} style={{color: "black"}}/>
               </div>
-
+  
               <div class="input-box">
                 <label for="email">Telefono</label>
-                <input
-                  type="text"
-                  id="telefono"
-                  placeholder="Ej: 3235148905"
-                  name="telefono"
-                  value={post.telefono}
-                  onChange={handleChange}
-                  className="form-control"
-                />
+                <input type="text" id="telefono" placeholder="Ej: 3235148905" name="telefono" value={post.telefono} onChange={handleChange} className="form-control" style={{color: "black"}} />
               </div>
-
+            </div>
+  
+            <div class="column">
               <div class="input-box">
                 <label for="number">Latitud</label>
-                <input
-                  type="number"
-                  id="latitud"
-                  placeholder="Ej: 4.54536565"
-                  name="latitud"
-                  value={post.latitud}
-                  onChange={handleChange}
-                  className="form-control"
-                />
+                <input type="number" id="latitud" placeholder="Ej: 4.54536565" name="latitud" value={post.latitud} onChange={handleChange} className="form-control" style={{color: "black"}}/>
               </div>
-
+  
               <div class="input-box">
                 <label for="password">Longitud</label>
-                <input
-                  type="number"
-                  id="longitud"
-                  placeholder="Ej: -75.8789697"
-                  name="longitud"
-                  value={post.longitud}
-                  onChange={handleChange}
-                  className="form-control"
-                />
+                <input type="number" id="longitud" placeholder="Ej: -75.8789697" name="longitud" value={post.longitud} onChange={handleChange} className="form-control" style={{color: "black"}}/>
               </div>
-
+  
               <div class="input-box">
                 <label for="password">Puesto disponibles</label>
-                <input
-                  type="number"
-                  placeholder="ej: 34"
-                  name="puestos"
-                  value={post.puestos}
-                  onChange={handleChange}
-                />
+                <input type="number" placeholder="ej: 34" name="puestos" value={post.puestos} onChange={handleChange} style={{color: "black"}}/>
               </div>
-
+  
               <div class="input-box">
                 <label for="password">Descripcion Parqueadero</label>
-                <textarea
-                  type="text"
-                  placeholder="Sobre nosotros.."
-                  name="nosotros"
-                  value={post.nosotros}
-                  onChange={handleChange}
-                />
+                <textarea type="text" placeholder="Sobre nosotros.." name="nosotros" value={post.nosotros} onChange={handleChange} style={{color: "black"}}></textarea>
               </div>
-
             </div>
-            <div class="continue-button">
-              <button onClick={handleSubmit} className="btn btn-primary">{id === 'new' ? 'Agregar' : 'Actualizar'}</button>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="continue-button">
+            <button onClick={handleSubmit} className="crear">{id === 'new' ? 'Agregar' : 'Actualizar'}</button>
+          </div>
+        </form>
       </div>
-    </PortalLayout>
+    </div>
+  </PortalLayout>
+  
+
   );
 };
 

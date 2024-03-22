@@ -2,11 +2,11 @@
 
 .DatosParqueadero {
     width: 100%;
-    height: 60vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas de ancho flexible */
     gap: 1rem; /* Espacio entre las columnas */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    
 }
 
 

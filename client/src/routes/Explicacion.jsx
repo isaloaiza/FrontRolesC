@@ -1,11 +1,13 @@
 import React from 'react';
 import '../assets/Explicacion.css';
 import PortalLayout from '../layout/PortalLayout';
+import Footer from '../components/Footer';
+
 
 export default function Explicacion() {
   const reproducirVideo = () => {
     // URL del video de YouTube
-    const videoUrl = 'https://youtu.be/O9sj8yejEtk';
+    const videoUrl = 'https://youtu.be/lPAu_8lLgio';
     // Abre una nueva ventana emergente con el video de YouTube
     window.open(videoUrl, '_blank', 'noopener noreferrer');
   };
@@ -34,6 +36,7 @@ export default function Explicacion() {
           <img src="https://i.ibb.co/5KvC9QQ/Wireframing-bro-removebg-preview.png" alt="Imagen explicativa" className='intentoimg'/>
         </div>
       </div>
+      <Footer />
     </PortalLayout>
   );
 }

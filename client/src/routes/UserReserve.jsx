@@ -43,45 +43,32 @@ const UserReseve = () => {
   }, [auth]);
 
   const handleCheckout = (reserva) => {
-    // Obtener la hora de salida (hora actual)
-    const horaSalida = new time();
-  
-    // Calcular la duración del estacionamiento en milisegundos
-    const tiempoEstacionamiento = horaSalida - new Date(reserva.date);
-  
-    // Convertir la duración del estacionamiento de milisegundos a horas
-    const duracionHoras = tiempoEstacionamiento / (1000 * 60 * 60);
-  
-    // Calcular el valor a pagar (por ejemplo, tarifa de $X por hora)
-    const tarifaPorHora = 3000; // Ejemplo de tarifa por hora
-    const valorAPagar = duracionHoras * tarifaPorHora;
+    
   
     // Crear un nuevo documento PDF
     const doc = new jsPDF();
   
     // Diseño del PDF
     doc.setFontSize(18);
-    doc.text(90, 20, 'Detalles de la reserva');
+    doc.text(80, 20, 'Detalles de la reserva');
     doc.setFontSize(12);
     doc.text(20, 30, `Fecha de reserva: ${reserva.date}`);
     doc.text(20, 40, `Nombre: ${reserva.nombre}`);
-    doc.text(20, 50, `Hora de salida: ${horaSalida}`);
-    doc.text(20, 60, `Duración del estacionamiento: ${duracionHoras.toFixed(2)} horas`);
-    doc.text(20, 70, `Valor a pagar: $${valorAPagar.toFixed(2)}`);
-
+    doc.text(20, 50, `Hora de reserva: ${reserva.time}`);
+  
     // Construir el array de datos para la tabla
-  const data = [
-    [reserva.date, reserva.time, reserva.nombre, reserva.placa, reserva.telefono]
-  ];
+    const data = [
+      [reserva.date, reserva.time, reserva.nombre, reserva.placa, reserva.telefono]
+    ];
   
-  doc.autoTable({
-    head: [['Fecha', 'Hora', 'Nombre', 'Placa', 'Numero Telefonico']],
-    body: data,
-    startY: 80 // Empieza la tabla en la posición Y 80
-  });
+    doc.autoTable({
+      head: [['Fecha', 'Hora', 'Nombre', 'Placa', 'Numero Telefonico']],
+      body: data,
+      startY: 80 // Empieza la tabla en la posición Y 80
+    });
   
-  // Guardar el PDF
-  doc.save("reserva.pdf");
+    // Guardar el PDF
+    doc.save("reserva.pdf");
   };
   const handleDelete = async (reservaId) => {
     try {
