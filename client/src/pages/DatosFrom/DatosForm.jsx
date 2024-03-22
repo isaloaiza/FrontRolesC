@@ -5,6 +5,7 @@ import config from "../../config.json";
 import Mapa from "../../js/Mapa";
 import PortalLayout from "../../layout/PortalLayout";
 import Footer from "../../components/Footer";
+import Swal from 'sweetalert2'; // Importar SweetAlert2
 import { useAuth } from "../../Autenticacion/AutProvider";
 
 const Posts = () => {
@@ -36,8 +37,39 @@ const Posts = () => {
   }, [auth]);
 
   const handleDelete = async (post) => {
-    setUserPosts(userPosts.filter((p) => p._id !== post._id));
-    await axios.delete(`${config.apiUrl}/${post._id}`);
+    // Mostrar un mensaje de confirmación antes de eliminar el parqueadero
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción eliminará el parqueadero.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        // Si se confirma la eliminación, procede con la solicitud de eliminación
+        try {
+          setUserPosts(userPosts.filter((p) => p._id !== post._id));
+          await axios.delete(`${config.apiUrl}/${post._id}`);
+          // Mostrar un mensaje de éxito después de eliminar el parqueadero
+          Swal.fire(
+            '¡Eliminado!',
+            'El parqueadero ha sido eliminado correctamente.',
+            'success'
+          );
+        } catch (error) {
+          console.error("Error al eliminar el parqueadero:", error);
+          // Mostrar un mensaje de error si hay algún problema al eliminar el parqueadero
+          Swal.fire(
+            'Error',
+            'Hubo un problema al eliminar el parqueadero. Por favor, inténtalo de nuevo más tarde.',
+            'error'
+          );
+        }
+      }
+    });
   };
 
   return (
@@ -62,7 +94,7 @@ const Posts = () => {
   //             <th>Descripción</th>
   //             <th>Latitud</th>
   //             <th>Longitud</th>
-  //    
+  //             <th>ID Usuario</th> 
   //             <th>Actualización</th>
   //             <th>Eliminación</th>
   //             <th>Reserva</th>
@@ -75,7 +107,7 @@ const Posts = () => {
   //               <td>{post.content}</td>
   //               <td>{post.latitud}</td>
   //               <td>{post.longitud}</td>
-  //     
+  //               <td> {post.userId} </td> 
   //               <td>
   //                 <button onClick={() => navigate(`/post/${post._id}`)} className="btn btn-primary">
   //                   Actualizar

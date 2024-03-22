@@ -74,6 +74,11 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
                 <Link to="/ExplicacionUser">¿Como Funciona?</Link>
               </li>
                )}
+            {role === "usuario" && ( 
+              <li>
+                <Link to="/reservasUser">Historial Reserva</Link>
+              </li>
+               )}
                 {role === "cliente" && ( 
                <li>
                 <Link to="/Explicacion">¿Como Funciona?</Link>

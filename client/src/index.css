@@ -7,6 +7,7 @@
   margin-right: 180px;
   margin-top: 10vh;
   margin-bottom: 12.5vh;
+  width: 100%;
 }
 
 .banner {
@@ -19,7 +20,7 @@
 }
 
 .banner .tagline {
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 0.8px;
   padding: 8px 10px;
   background: linear-gradient(90deg, rgba(10, 26, 77, 1) 0%, rgba(13, 54, 111, 1) 30%, rgba(26, 173, 255, 1) 100%);
@@ -36,11 +37,11 @@
 
 .aligh-items-center {
   display: flex;
-  gap: 100px;
+  gap: 500px;
 
 }
 
-.Hintento {
+.intento {
   width: 700px;
 }
 
