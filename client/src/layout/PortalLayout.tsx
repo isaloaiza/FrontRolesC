@@ -61,12 +61,12 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
             </li> */}
             {role === "usuario" && ( 
             <li>
-              <Link to="/Dashboard">Mapa navegación</Link>
+              <Link to="/dashboard">Mapa navegación</Link>
             </li>
             )}
             {role === "cliente" && ( 
             <li>
-              <Link to="/Posts">Creación parqueadero</Link>
+              <Link to="/posts">Creación parqueadero</Link>
             </li>
             )}
             {role === "usuario" && ( 
